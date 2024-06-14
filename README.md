@@ -1,5 +1,7 @@
 # LDTS_<04><07> - <Bad Ice Cream>
 
+### Final grade: 16.4/20
+
 ## Game Description 
 
 
