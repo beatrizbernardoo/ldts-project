@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'info.solidsoft.pitest' version '1.15.0'
+    id 'application'
+    id 'org.kordamp.gradle.errorprone' version '0.53.0'
+}
+
+group = 'l04gr07'
+version = '1.0-SNAPSHOT'
+
+application {mainClass.set("l04gr07.Application")}
+repositories {
+    mavenCentral()
+}
+
+pitest {junit5PluginVersion = '1.2.0'
+    targetClasses = ['l04gr07.control.*','l04gr07.model.*','l04gr07.view.*']
+}
+
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation group: 'com.googlecode.lanterna', name:
+            'lanterna', version: '3.1.1'
+    testImplementation 'org.mockito:mockito-core:3.7.7'
+    testImplementation 'junit:junit:4.13.1'
+}
+
+test {
+    useJUnitPlatform()
+}
